@@ -13,7 +13,6 @@ traci.start(cmd)
 
 while traci.simulation.getMinExpectedNumber() > 0:
     traci.simulationStep()
-    traci.trafficlight.setRedYellowGreenState("C", state="rrrrrrrrrrrrrrrrrr")
     t = traci.simulation.getTime()
     if t % 300 == 0:
         NL = traci.trafficlight.getRedYellowGreenState("C")

@@ -22,3 +22,9 @@ pip install -r requirements.txt
 # à la racine
 python scripts/run.py
 ```
+
+AVEC GUI 
+```
+# à la racine
+python scripts/run.py --gui
+```

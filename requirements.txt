@@ -1,3 +1,4 @@
-eclipse-sumo==1.26.0
-traci==1.26.0
-sumolib==1.26.0
+eclipse-sumo==1.26.0         # Simulateur SUMO et outils de conversion
+traci==1.26.0               # Pilotage de SUMO depuis Python
+sumolib==1.26.0             # Utilitaires pour les réseaux SUMO
+PySide6-Essentials==6.10.2   # Fenêtres de sélection des fichiers

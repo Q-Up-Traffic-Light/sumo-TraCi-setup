@@ -1,0 +1,11 @@
+<routes>
+    <vType id="voiture" accel="2.6" decel="4.5" length="5" maxSpeed="15"/>
+
+    <route id="ouest_est" edges="O2C C2E"/>
+    <route id="nord_sud"  edges="N2C C2S"/>
+    <route id="sud_est"   edges="S2C C2E"/>
+
+    <flow id="f1" type="voiture" route="ouest_est" begin="0" end="3600" vehsPerHour="600"/>
+    <flow id="f2" type="voiture" route="nord_sud"  begin="0" end="3600" vehsPerHour="300"/>
+    <flow id="f3" type="voiture" route="sud_est"   begin="0" end="3600" vehsPerHour="200"/>
+</routes>

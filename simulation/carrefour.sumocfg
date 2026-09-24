@@ -1,0 +1,14 @@
+<configuration>
+    <input>
+        <net-file value="carrefour.net.xml"/>
+        <route-files value="carrefour.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+        <step-length value="1"/>
+    </time>
+    <random_number>
+        <seed value="42"/>
+    </random_number>
+</configuration>

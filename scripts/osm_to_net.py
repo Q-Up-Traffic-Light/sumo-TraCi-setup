@@ -18,7 +18,9 @@ def convert_osm(osm, output=None):
     netconvert = sumolib.checkBinary("netconvert")
     subprocess.run(
         [netconvert,
-         "--osm-files", str(osm), "--output-file", str(output)],
+         "--osm-files", str(osm), "--output-file", str(output),
+         "--geometry.remove", "--ramps.guess", "--junctions.join",
+         "--tls.guess-signals", "--tls.discard-simple", "--tls.join"],
         check=True,
     )
 

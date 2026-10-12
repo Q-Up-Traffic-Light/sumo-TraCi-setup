@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Flux du carrefour Coubertin (feu cluster_2304257859_..._#1more).
+     Débits en véhicules/heure : comptage sur 15 min (période creuse) ramené en moyenne horaire (x4). -->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="car" vClass="passenger"/>
+
+    <!-- Depuis Osny (ouest) -->
+    <flow id="osny_pontoise"      type="car" begin="0" end="3600" perHour="216" from="-680694204#1"  to="680694191#3"  departLane="best" departSpeed="max" color="255,0,0"/>
+    <flow id="osny_coubertin"     type="car" begin="0" end="3600" perHour="4" from="-680694204#1"  to="1316239387#4" departLane="best" departSpeed="max" color="255,140,0"/>
+
+    <!-- Depuis Pontoise (est) -->
+    <flow id="pontoise_osny"      type="car" begin="0" end="3600" perHour="268" from="680694190#0"   to="680694204#1"  departLane="best" departSpeed="max" color="0,90,255"/>
+    <flow id="pontoise_coubertin" type="car" begin="0" end="3600" perHour="16" from="680694190#0"   to="1316239387#4" departLane="best" departSpeed="max" color="0,220,255"/>
+
+    <!-- Depuis la rue Pierre de Coubertin -->
+    <flow id="coubertin_pontoise" type="car" begin="0" end="3600" perHour="36" from="-1316239387#4" to="680694191#3"  departLane="best" departSpeed="max" color="0,200,0"/>
+    <flow id="coubertin_osny"     type="car" begin="0" end="3600" perHour="16" from="-1316239387#4" to="680694204#1"  departLane="best" departSpeed="max" color="180,0,255"/>
+</routes>

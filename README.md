@@ -4,15 +4,25 @@ Q-Up est un logiciel qui permet d'analyser le traffic au feu tricolore via une s
 
 ## Outils/Langage 
 
-- SUMO 1.25.0
+- SUMO 1.26.0
 - TraCI 
 - Python
 
 ## Installation
 
-```
+Linux/MacOs
+```bash
 git clone
+python -m venv .venv
 source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Windows
+```powershell
+git clone
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 

@@ -2,32 +2,9 @@
 
 import argparse
 from pathlib import Path
-
-import sumolib
-import traci
-
+import env
+import runner
 from osm_to_net import convert_osm
-
-
-def run_simulation(config, gui=False):
-    """Exécute une configuration SUMO et affiche les statistiques TraCI."""
-    SUMO = sumolib.checkBinary("sumo-gui" if gui else "sumo")
-    cmd = [SUMO, "-c", str(config)]
-    if gui:
-        cmd += ["--start", "--delay", "100", "--quit-on-end"]
-
-    traci.start(cmd)
-
-    try:
-        edges = [edge for edge in traci.edge.getIDList() if not edge.startswith(":")]
-        while traci.simulation.getMinExpectedNumber() > 0:
-            traci.simulationStep()
-            t = traci.simulation.getTime()
-            if t % 300 == 0:
-                attente = sum(traci.edge.getWaitingTime(edge) for edge in edges)
-                print(f"t={t:.0f}s  véhicules={traci.vehicle.getIDCount()}  attente={attente:.0f}s")
-    finally:
-        traci.close()
 
 
 def main():
@@ -52,7 +29,10 @@ def main():
     config = args.source.resolve()
     if config.suffix != ".sumocfg":
         config = convert_osm(config)
-    run_simulation(config, gui=args.gui)
+        
+    envSimulation = env.EnvSimulation(config, runner.libsumoRunner())
+    # envSimulation = env.EnvSimulation(config, runner.TraciRunner(True)) # Lancer le mode GUI
+    envSimulation.run_simulation()
 
 
 if __name__ == "__main__":
